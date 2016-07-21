@@ -50,29 +50,28 @@ MinecraftHelper.prototype.eventHandlers.onLaunch = function (launchRequest, sess
 
 MinecraftHelper.prototype.intentHandlers = {
     WelcomeIntent: function (intent, session, response) {
-        var itemName = intent.slots.Item.value.toLowerCase();
-        var cardTitle = "Welcome for " + itemName;
-        var recipe = recipes[itemName];
+        var personName = intent.slots.Person.value.toLowerCase();
+        var cardTitle = "Welcome for " + personName;
+        var recipe = recipes[personName];
         if (recipe) {
             response.tellWithCard(recipe, cardTitle, recipe);
         } else {
-            response.ask("I'm sorry, I currently do not know how to welcome " + itemName + ". I can welcome Nancy, Pete, Jenny, and others in the Stein and Kronick family. Who shall I welcome?", "What else can I help with?");
+            response.ask("I'm sorry, I currently do not know how to welcome " + personName + ". I can welcome Nancy, Pete, Jenny, and others in the Stein and Kronick family. Who shall I welcome?", "What else can I help with?");
         }
-    },
+    },	
     AdviceIntent: function (intent, session, response) {
-        var adviceName = intent.slots.Advice.value.toLowerCase();
-        var cardTitle = "Advice for " + adviceName;
-        var advice = advices[1];
-        if (advice) {
-			//response.tellWithCard(speechOutput, cardTitle, advice);
-        } else {			
-            response.ask("I'm sorry, I currently do not know how to resepon to that kind of advice. I can give marriage advice. or I can welcome Nancy, Pete, Jenny, and others in the Stein and Kronick family. Who shall I welcome?", "What else can I help with?");
+        var personName = intent.slots.Person.value.toLowerCase();
+        var cardTitle = "Welcome for " + personName;
+        var recipe = recipes[personName];
+        if (recipe) {
+            response.tellWithCard(recipe, cardTitle, recipe);
+        } else {
+            response.ask("I'm sorry, I currently do not know how to welcome " + personName + ". I can welcome Nancy, Pete, Jenny, and others in the Stein and Kronick family. Who shall I welcome?", "What else can I help with?");
         }
-    },
-	
+    },	
     HelpIntent: function (intent, session, response) {
         var cardTitle = intent.name;
-        var speechOutput = "You can ask me to welcome people into the roomor, you can say exit... Now, what can I help you with?";
+        var speechOutput = "You can ask me to welcome people into the room, or you can say exit... Now, what can I help you with?";
         var repromptText = "You can say things like, Alli is here, or Welcome Nancy, or you can say exit... Now, what can I help you with?";
         response.ask(speechOutput, repromptText);
     }

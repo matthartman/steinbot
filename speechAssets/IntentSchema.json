@@ -4,8 +4,8 @@
       "intent": "WelcomeIntent",
       "slots": [
       {
-        "name" : "Item",
-        "type": "LIST_OF_ITEMS"
+        "name" : "Person",
+        "type": "LIST_OF_PEOPLE"
       }
      ]
     },

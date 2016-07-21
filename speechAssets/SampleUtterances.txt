@@ -1,6 +1,6 @@
-WelcomeIntent welcome {Item}
-WelcomeIntent say hi to {Item}
-WelcomeIntent {Item} is here
+WelcomeIntent welcome {Person}
+WelcomeIntent say hi to {Person}
+WelcomeIntent {Person} is here
 
 AdviceIntent give me advice
 AdviceIntent advice
