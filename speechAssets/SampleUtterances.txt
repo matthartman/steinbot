@@ -1,0 +1,22 @@
+WelcomeIntent welcome {Item}
+WelcomeIntent say hi to {Item}
+WelcomeIntent {Item} is here
+
+AdviceIntent give me advice
+AdviceIntent advice
+AdviceIntent marriage advice
+
+HelpIntent get help
+HelpIntent help
+HelpIntent help me
+HelpIntent how can I use you
+HelpIntent how do I use you
+HelpIntent what can I ask you
+HelpIntent what can I do
+HelpIntent what can I use this for
+HelpIntent what can you do
+HelpIntent what can you tell me
+HelpIntent what commands can I ask
+HelpIntent what commands can I say
+HelpIntent what do you do
+HelpIntent what questions can I ask
