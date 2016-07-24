@@ -1,4 +1,4 @@
 module.exports = {
-    "advice 1": "advice 1",
-    "advice 2": "advice 2"
+    "one": "this is advice 1",
+    "two": "this is advice 2"
 };

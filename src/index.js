@@ -60,18 +60,24 @@ MinecraftHelper.prototype.intentHandlers = {
         }
     },	
     AdviceIntent: function (intent, session, response) {
-        var personName = intent.slots.Person.value.toLowerCase();
-        var cardTitle = "Welcome for " + personName;
-        var recipe = recipes[personName];
-        if (recipe) {
-            response.tellWithCard(recipe, cardTitle, recipe);
-        } else {
-            response.ask("I'm sorry, I currently do not know how to welcome " + personName + ". I can welcome Nancy, Pete, Jenny, and others in the Stein and Kronick family. Who shall I welcome?", "What else can I help with?");
-        }
-    },	
+        var cardTitle = "Marriage Advice";
+		var speechOutput = {
+			speech: "<speak>Welcome to the sand box. <audio src='https://s3.amazonaws.com/sounds226/boom.mp3'/></speak>",
+		    type: "SSML"
+		};
+		
+        var advice = recipes["pete"];
+
+		
+		//var speechOutput = "<speak>This output speech uses SSML <audio src='https://s3.amazonaws.com/sounds226/boom.mp3'></speak>";
+        var repromptText = "You can say things like, Alli is here, or marriage advice or you can say exit... Now, what can I help you with?";
+        //response.ask({'type': 'SSML', 'speech': speechOutput}, repromptText);
+		//response.ask(speechOutput, repromptText);
+		response.tell(speechOutput);
+    },
     HelpIntent: function (intent, session, response) {
         var cardTitle = intent.name;
-        var speechOutput = "You can ask me to welcome people into the room, or you can say exit... Now, what can I help you with?";
+        var speechOutput = "You can ask me to welcome people into the room by saying welcome Alli, or you can say exit... Now, what can I help you with?";
         var repromptText = "You can say things like, Alli is here, or Welcome Nancy, or you can say exit... Now, what can I help you with?";
         response.ask(speechOutput, repromptText);
     }
