@@ -41,7 +41,7 @@ MinecraftHelper.prototype = Object.create(AlexaSkill.prototype);
 MinecraftHelper.prototype.constructor = MinecraftHelper;
 
 MinecraftHelper.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-    var speechOutput = "Welcome to the Minecraft Helper. You can ask a question like, what's the recipe for a chest? ... Now, what can I help you with.";
+    var speechOutput = "Welcome to Steinbot, the official alexa app of Pete and Alli Stein. You can ask me to welcome someone I know by saying so and so is here, like Alli is here. Or you can ask me for marriage advice. When your friends are visiting, I can give them the wifi code if they need it. ... Now, what can I help you with?";
     // If the user either does not reply to the welcome message or says something that is not
     // understood, they will be prompted again with this text.
     var repromptText = "For instructions on what you can say, please say help me.";
@@ -53,33 +53,43 @@ MinecraftHelper.prototype.intentHandlers = {
         var personName = intent.slots.Person.value.toLowerCase();
         var cardTitle = "Welcome for " + personName;
         var recipe = recipes[personName];
+		
+		var wantMore = "Want to hear some wedding advice from your friends? Just say Advice. Or you can say exit.";
+		
         if (recipe) {
-            response.tellWithCard(recipe, cardTitle, recipe);
+            //response.tellWithCard(recipe, cardTitle, recipe);
+			response.ask(recipe + wantMore, wantMore);
         } else {
             response.ask("I'm sorry, I currently do not know how to welcome " + personName + ". I can welcome Nancy, Pete, Jenny, and others in the Stein and Kronick family. Who shall I welcome?", "What else can I help with?");
         }
     },	
     AdviceIntent: function (intent, session, response) {
         var cardTitle = "Marriage Advice";
+
+ 	    var randomNumber = Math.floor(Math.random() * advices.length);
+		var advice = advices[randomNumber];
+		console.log("randomNumber is " + randomNumber);
+
+		var wantMore = "Want to hear more wedding advice from your friends? Just say Advice. Or you can say Exit.";
+
 		var speechOutput = {
-			speech: "<speak>Welcome to the sand box. <audio src='https://s3.amazonaws.com/sounds226/boom.mp3'/></speak>",
-		    type: "SSML"
+			speech: "<speak>" + advice + wantMore + "</speak>",
+		    type: "SSML",
 		};
 		
-        var advice = recipes["pete"];
-
 		
 		//var speechOutput = "<speak>This output speech uses SSML <audio src='https://s3.amazonaws.com/sounds226/boom.mp3'></speak>";
-        var repromptText = "You can say things like, Alli is here, or marriage advice or you can say exit... Now, what can I help you with?";
+        var repromptText = "You can say things like, Alli is here, or marriage advice or you can ask me for Pete and Alli's wifi, or you can say exit... Now, what can I help you with?";
         //response.ask({'type': 'SSML', 'speech': speechOutput}, repromptText);
 		//response.ask(speechOutput, repromptText);
-		response.tell(speechOutput);
+		//response.tell(speechOutput);
+		response.ask(speechOutput, wantMore);
+		
     },
     HelpIntent: function (intent, session, response) {
         var cardTitle = intent.name;
-        var speechOutput = "You can ask me to welcome people into the room by saying welcome Alli, or you can say exit... Now, what can I help you with?";
-        var repromptText = "You can say things like, Alli is here, or Welcome Nancy, or you can say exit... Now, what can I help you with?";
-        response.ask(speechOutput, repromptText);
+        var speechOutput = "You can ask me to welcome people into the room by saying welcome Alli, or you can ask me for marriage advice or the wifi information, or say exit... Now, what can I help you with?";
+        response.ask(speechOutput, speechOutput);
     }
 };
 

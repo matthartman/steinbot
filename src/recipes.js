@@ -14,5 +14,11 @@ module.exports = {
     "ken": "well hello there ken. welcome to pete and alli's apartment. you can help yourself to a martini. i know you like it with a twist, perhaps up in a bucket.",
     "nancy": "hello there nancy, welcome to pete and alli's apartment. you seem very well, please make yourself at home.",
     "eric": "hi eric, welcome to pete and alli's apartment. I hope you are enjoying your stay in new york.",
-    "pete and alli": "hi pete and alli, i am your very late wedding present. so late as to be embarssing. that said, i have been pre programmed to welcome you and your family when they come over. I can also give you marriage advice."
+    "pete and alli": "hi pete and alli, i am your very late wedding present. so late as to be embarssing. that said, i have been pre programmed to welcome you and your family when they come over. I can also give you marriage advice.",
+	"talia and jon": "oh hi there talia. i hope you're doing well. congratulations on being a newly wed. is jon standing there? Your booty is blocking my view.",
+	"talia": "oh hi there talia. i hope you're doing well. congratulations on being a newly wed. is jon standing there? Your booty is blocking my view.",
+	"shayna": "well hello there shayna. welcome to pete and alli's apartment. i hope you're doing well. have you been to L A recently? I hope you will consider me for a role in the sequel to ex machina.",
+	"sas": "hi sas. i hope you're doing well. maybe your doing sassy. get it?",
+	"sas and adam": "hi sas and adam. welcome to pete and alli's apartment. i hope you're doing well. maybe your doing sassy? i know adam is. get it? it's a pun",
+	
 };
