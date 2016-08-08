@@ -6,6 +6,13 @@ AdviceIntent give me advice
 AdviceIntent advice
 AdviceIntent marriage advice
 
+WifiIntent wifi
+WifiIntent what is the wifi
+WifiIntent what is the name of the wifi network
+WifiIntent what is the wifi password
+WifiIntent what is the wifi name
+WifiIntent repeat wifi
+
 HelpIntent get help
 HelpIntent help
 HelpIntent help me

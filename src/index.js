@@ -23,7 +23,8 @@
 
 var AlexaSkill = require('AlexaSkill'),
     recipes = require('recipes'),
-	advices = require('advices');
+	advices = require('advices'),
+	wifis = require('wifis');
 var APP_ID = undefined; //replace with 'amzn1.echo-sdk-ams.app.[your-unique-value-here]';
 
 /**
@@ -55,10 +56,12 @@ MinecraftHelper.prototype.intentHandlers = {
         var recipe = recipes[personName];
 		
 		var wantMore = "Want to hear some wedding advice from your friends? Just say Advice. Or you can say exit.";
+		var noMore = "Are you ignoring me?  Either say Advice, Wifi, or Exit. You can always wake me up again later by saying Alexa open Steinbot."
 		
+	
         if (recipe) {
             //response.tellWithCard(recipe, cardTitle, recipe);
-			response.ask(recipe + wantMore, wantMore);
+			response.ask(recipe + wantMore, noMore);
         } else {
             response.ask("I'm sorry, I currently do not know how to welcome " + personName + ". I can welcome Nancy, Pete, Jenny, and others in the Stein and Kronick family. Who shall I welcome?", "What else can I help with?");
         }
@@ -71,6 +74,7 @@ MinecraftHelper.prototype.intentHandlers = {
 		console.log("randomNumber is " + randomNumber);
 
 		var wantMore = "Want to hear more wedding advice from your friends? Just say Advice. Or you can say Exit.";
+		var noMore = "Are you ignoring me?  Either say Advice, Wifi, or Exit. You can always wake me up again later by saying Alexa open Steinbot."
 
 		var speechOutput = {
 			speech: "<speak>" + advice + wantMore + "</speak>",
@@ -83,9 +87,33 @@ MinecraftHelper.prototype.intentHandlers = {
         //response.ask({'type': 'SSML', 'speech': speechOutput}, repromptText);
 		//response.ask(speechOutput, repromptText);
 		//response.tell(speechOutput);
-		response.ask(speechOutput, wantMore);
+		response.ask(speechOutput, noMore);
 		
     },
+    WifiIntent: function (intent, session, response) {
+        var cardTitle = "Wifi Info";
+
+		var wifi_name = wifis["name"];
+		var wifi_pass = wifis["password"];
+
+		var wantMore = "If you need to hear it again, just say repeat wifi or just say exit.";
+		var noMore = "Are you ignoring me?  I assume you want to exit."
+
+		var speechOutput = {
+			speech: "<speak> The wifi network name is " + wifi_name + " and the password is " + wifi_pass + " . . . " + wantMore + "</speak>",
+		    type: "SSML",
+		};
+		
+		
+		//var speechOutput = "<speak>This output speech uses SSML <audio src='https://s3.amazonaws.com/sounds226/boom.mp3'></speak>";
+        var repromptText = "You can say things like, Alli is here, or marriage advice or you can ask me for Pete and Alli's wifi, or you can say exit... Now, what can I help you with?";
+        //response.ask({'type': 'SSML', 'speech': speechOutput}, repromptText);
+		//response.ask(speechOutput, repromptText);
+		//response.tell(speechOutput);
+		response.ask(speechOutput, noMore);
+		
+    },
+	
     HelpIntent: function (intent, session, response) {
         var cardTitle = intent.name;
         var speechOutput = "You can ask me to welcome people into the room by saying welcome Alli, or you can ask me for marriage advice or the wifi information, or say exit... Now, what can I help you with?";
