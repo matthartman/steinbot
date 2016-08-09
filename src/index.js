@@ -73,7 +73,7 @@ MinecraftHelper.prototype.intentHandlers = {
 		var advice = advices[randomNumber];
 		console.log("randomNumber is " + randomNumber);
 
-		var wantMore = "Want to hear more wedding advice from your friends? Just say Advice. Or you can say Exit.";
+		var wantMore = "Come back tomorrow for more marriage advice. Or you can ask for more advice now. Or you can say Exit.";
 		var noMore = "Are you ignoring me?  Either say Advice, Wifi, or Exit. You can always wake me up again later by saying Alexa open Steinbot."
 
 		var speechOutput = {
