@@ -4,5 +4,7 @@ module.exports = [
 	"This marriage advice is from Talia and Jon. <audio src='https://s3.amazonaws.com/steinbot/taliajohn.mp3'/> I'm sure Jon and Talia will have a strong relationship powered mainly by her booty",
 	"Here is advice from Eric and Rebecca. <audio src='https://s3.amazonaws.com/steinbot/ericrebecca.mp3'/> That was some very good advice",
 	"Here is advice from Matt and Phyllis London. <audio src='https://s3.amazonaws.com/steinbot/londonphyllis.mp3'/> That was very sweet",
-	"Here is advice from Matt and Steve and Stacey Graf. <audio src='https://s3.amazonaws.com/steinbot/steveandstacey.mp3'/> That was a nice sentiment, however I wonder if nightly floss is a euphamism"
+	"Here is advice from Matt and Steve and Stacey Graf. <audio src='https://s3.amazonaws.com/steinbot/steveandstacey.mp3'/> That was a nice sentiment, however I wonder if nightly floss is a euphamism",
+	"This is marriage advice from Ethan Lieberman. Or, as you call him, Lee Bo. <audio src='https://s3.amazonaws.com/steinbot/liebo.mp3'/> This was a nice message, very well organized.",
+	"Here is some marriage advice from Andrew Hartman. <audio src='https://s3.amazonaws.com/steinbot/andy.mp3'/> Andrew is crazy."
 ];

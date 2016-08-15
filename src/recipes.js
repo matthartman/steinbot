@@ -26,5 +26,8 @@ module.exports = {
 	"eric": "hi eric. welcome to pete and alli's apartment. did you just get in from california? your arms must be tired. ha ha ha.",
 	"eric and rebecca": "hi eric and rebecca. welcome to pete and alli's apartment. did you just get in from california? your arms must be tired. ha ha ha.",
 	"rebecca": "hi eric and rebecca. welcome to pete and alli's apartment. did you just get in from california? your arms must be tired. ha ha ha.",
-	"rebecca and eric": "hi eric and rebecca. welcome to pete and alli's apartment. did you just get in from california? your arms must be tired. ha ha ha."
+	"rebecca and eric": "hi eric and rebecca. welcome to pete and alli's apartment. did you just get in from california? your arms must be tired. ha ha ha.",
+	"ethan": "hi ethan. or should i say lee bow. welcome to pete and alli's apartment. all of the items in the fridge have been labeled with their correct owner, please do not take anything that doesn't bear your initials.",
+	"liebo": "hi ethan. or should i say lee bow. welcome to pete and alli's apartment. all of the items in the fridge have been labeled with their correct owner, please do not take anything that doesn't bear your initials.",
+	"andrew": "hi andy. crazy that your here! don't steal stein's red umbros."
 };
